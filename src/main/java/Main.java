@@ -2,7 +2,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import service.FileService;
 
-import static util.AppUtils.printFileName;
+import static util.FileUtils.printFileName;
 
 public class Main {
     private static FileService fileService = new FileService();

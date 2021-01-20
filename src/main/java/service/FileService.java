@@ -3,8 +3,8 @@ package service;
 import java.io.File;
 import java.util.Properties;
 
-import static util.AppUtils.getJsonFileStream;
-import static util.AppUtils.getProperties;
+import static util.FileUtils.getJsonFileStream;
+import static util.FileUtils.getProperties;
 
 public class FileService {
     public static final String REGEX = "[.][^.]+$";

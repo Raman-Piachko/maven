@@ -13,8 +13,8 @@ import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.stream.Stream;
 
-public class AppUtils {
-    private static final Logger LOGGER = LogManager.getLogger(AppUtils.class);
+public class FileUtils {
+    private static final Logger LOGGER = LogManager.getLogger(FileUtils.class);
 
     public static Properties getProperties(String propertiesPath) {
         Properties properties = new Properties();
