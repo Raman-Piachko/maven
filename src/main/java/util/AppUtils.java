@@ -1,7 +1,8 @@
 package util;
 
 import exception.EmptyPathException;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +14,7 @@ import java.util.Properties;
 import java.util.stream.Stream;
 
 public class AppUtils {
-    private static final Logger LOGGER = Logger.getLogger(AppUtils.class);
+    private static final Logger LOGGER = LogManager.getLogger(AppUtils.class);
 
     public static Properties getProperties(String propertiesPath) {
         Properties properties = new Properties();
@@ -22,6 +23,7 @@ public class AppUtils {
         try {
             fileInputStream = new FileInputStream(propertiesPath);
             properties.load(fileInputStream);
+            LOGGER.info("Properties have been read");
         } catch (IOException e) {
             LOGGER.error("Files not found", e);
             throw new EmptyPathException("Empty directory");
@@ -37,14 +39,17 @@ public class AppUtils {
 
     public static Stream<File> getJsonFileStream(String propertiesPath, String filePath, String fileType) {
         Properties properties = getProperties(propertiesPath);
+        Stream<File> fileStream;
         try {
-            return Files.walk(Paths.get(properties.getProperty(filePath)))
+            fileStream = Files.walk(Paths.get(properties.getProperty(filePath)))
                     .filter(Files::isRegularFile)
                     .map(Path::toFile)
                     .filter(file -> file.getName().contains(properties.getProperty(fileType)));
+            LOGGER.info("Files received");
         } catch (IOException e) {
             LOGGER.error("bad path or files cannot be found", e);
             throw new EmptyPathException("Illegal path or file was not found");
         }
+        return fileStream;
     }
 }

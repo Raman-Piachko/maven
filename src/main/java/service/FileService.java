@@ -3,11 +3,11 @@ package service;
 import java.io.File;
 import java.util.Properties;
 
-import static constants.AppConstants.REGEX;
 import static util.AppUtils.getJsonFileStream;
 import static util.AppUtils.getProperties;
 
-public class AppService {
+public class FileService {
+    public static final String REGEX = "[.][^.]+$";
 
     public void renameFilesFromFolder(String propertiesPath, String suffix, String filePath, String fileType) {
         Properties properties = getProperties(propertiesPath);
