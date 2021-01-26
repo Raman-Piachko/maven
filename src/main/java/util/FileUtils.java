@@ -22,7 +22,7 @@ public class FileUtils {
 
         try {
             fileInputStream = new FileInputStream(propertiesPath);
-            properties.load(fileInputStream);
+            properties.loadFromXML(fileInputStream);
             LOGGER.info("Properties have been read");
         } catch (IOException e) {
             LOGGER.error("Files not found", e);

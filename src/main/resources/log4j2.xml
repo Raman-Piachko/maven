@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="info" strict="true">
-
+<Configuration>
     <Appenders>
-        <Console name="STDOUT" target="SYSTEM_OUT">
+        <Console name="Console" target="SYSTEM_OUT">
+            <JsonLayout complete="false" compact="true" eventEol="true"></JsonLayout>
             <PatternLayout
-                    pattern="%style{%d}{yellow} %highlight{%-5level}{FATAL=bg__red, ERROR=red, WARN=yellow, INFO=green} [%t] %C{2} (%F:%L) - %m%n"/>
+                    pattern="%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable"/>
         </Console>
-        <File name="logfile" fileName="src/main/resources/logfile.log" append="false">
-            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+        <File name="JsonLog" fileName="src/main/resources/JsonLog.json" append="false">
+            <JsonLayout complete="true" compact="false" includeTimeMillis="true">
+                <KeyValuePair key="myCustomField" value="myCustomValue"/>
+            </JsonLayout>
         </File>
     </Appenders>
-
     <Loggers>
-        <Root level="trace">
-            <AppenderRef ref="STDOUT" level = "trace"/>
-            <AppenderRef ref="logfile"/>
+        <Root level="debug">
+            <AppenderRef ref="JsonLog"/>
         </Root>
+        <Logger name="com.vb" level="debug"></Logger>
     </Loggers>
-
 </Configuration>

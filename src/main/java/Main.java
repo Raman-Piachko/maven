@@ -7,15 +7,15 @@ import static util.FileUtils.printFileName;
 public class Main {
     private static FileService fileService = new FileService();
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
-    public static final String PROPERTIES_PATH = "src/main/resources/config.properties";
+    public static final String PROPERTIES_PATH = "src/main/resources/config.xml";
     public static final String SUFFIX = "suffix";
     public static final String FILE_TYPE = "fileType";
     public static final String FILE_PATH = "path";
 
     public static void main(String[] args) {
-        LOGGER.trace("Application start");
+        LOGGER.info("Application start");
         runApp();
-        LOGGER.trace("Application finished");
+        LOGGER.info("Application finished");
     }
 
     private static void runApp() {
