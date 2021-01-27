@@ -4,5 +4,6 @@
     <entry key="path">src/main/resources/test</entry>
     <entry key="fileType">.json</entry>
     <entry key="suffix">change</entry>
-    <entry key="ResultFile">json</entry>
+    <!--    Result file may be changed to json-->
+    <entry key="ResultFile">xml</entry>
 </properties>

@@ -2,7 +2,6 @@
 <Configuration>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <JsonLayout complete="false" compact="true" eventEol="true"></JsonLayout>
             <PatternLayout
                     pattern="%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable"/>
         </Console>
@@ -15,7 +14,7 @@
     <Loggers>
         <Root level="debug">
             <AppenderRef ref="JsonLog"/>
+            <AppenderRef ref="Console"/>
         </Root>
-        <Logger name="com.vb" level="debug"></Logger>
     </Loggers>
 </Configuration>
