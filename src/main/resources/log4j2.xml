@@ -5,7 +5,7 @@
             <PatternLayout
                     pattern="%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable"/>
         </Console>
-        <File name="JsonLog" fileName="src/main/resources/JsonLog.json" append="false">
+        <File name="Log" fileName="src/main/resources/Log.json" append="false">
             <JsonLayout complete="true" compact="false" includeTimeMillis="true">
                 <KeyValuePair key="myCustomField" value="myCustomValue"/>
             </JsonLayout>
@@ -13,7 +13,7 @@
     </Appenders>
     <Loggers>
         <Root level="debug">
-            <AppenderRef ref="JsonLog"/>
+            <AppenderRef ref="Log"/>
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>

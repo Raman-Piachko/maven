@@ -3,7 +3,7 @@
 <properties>
     <entry key="path">src/main/resources/test</entry>
     <entry key="fileType">.json</entry>
-    <entry key="suffix">change</entry>
+    <entry key="suffix">_change</entry>
     <!--    Result file may be changed to json-->
-    <entry key="ResultFile">xml</entry>
+    <entry key="resultFile">xml</entry>
 </properties>

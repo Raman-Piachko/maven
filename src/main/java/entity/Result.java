@@ -7,8 +7,8 @@ import java.util.List;
 @XmlRootElement
 public class Result {
     private String configFileName;
-    private List<String> fileNames;
     private Long executionTime;
+    private List<String> fileNames;
 
     public Result() {
     }

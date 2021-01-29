@@ -14,6 +14,10 @@ import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
+import static constant.RegexConstants.LAST_CHARS;
+import static constant.RegexConstants.REGEX;
+import static constant.RegexConstants.REPLACEMENT;
+
 public class FileUtils {
     private static final Logger LOGGER = LogManager.getLogger(FileUtils.class);
 
@@ -33,11 +37,6 @@ public class FileUtils {
         return properties;
     }
 
-    public static void printFileName(String propertiesPath, String filePath, String fileType) {
-        getJsonFiles(propertiesPath, filePath, fileType)
-                .forEach(file -> LOGGER.info(file.getName()));
-    }
-
     public static List<File> getJsonFiles(String propertiesPath, String filePath, String fileType) {
         Properties properties = getProperties(propertiesPath);
         List<File> fileList;
@@ -55,7 +54,7 @@ public class FileUtils {
         return fileList;
     }
 
-    public static List<String> getListOfFileName(String propertiesPath, String filePath, String fileType) {
+    public static List<String> getListOfFileNames(String propertiesPath, String filePath, String fileType) {
         return getJsonFiles(propertiesPath, filePath, fileType)
                 .stream()
                 .map(File::getName)
@@ -63,7 +62,7 @@ public class FileUtils {
     }
 
     public static String getNameFromFullPath(String path) {
-        int idx = path.replaceAll("\\\\", "/").lastIndexOf("/");
+        int idx = path.replaceAll(REGEX, REPLACEMENT).lastIndexOf(LAST_CHARS);
         return idx >= 0 ? path.substring(idx + 1) : path;
     }
 }
