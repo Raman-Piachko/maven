@@ -1,4 +1,4 @@
-package constant;
+package service;
 
 public class PropertiesConstants {
     public static final String PROPERTIES_PATH = "src/main/resources/config.xml";
@@ -8,5 +8,6 @@ public class PropertiesConstants {
     public static final String JSON_TYPE = "json";
     public static final String XML_TYPE = "xml";
     public static final String RESULT_FILE = "resultFile";
-
+    public static final String EMPTY_STRING = "";
+    public static final String PATH_REGEX = "[.][^.]+$";
 }

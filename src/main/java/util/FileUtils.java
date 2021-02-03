@@ -14,9 +14,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-import static constant.RegexConstants.LAST_CHARS;
-import static constant.RegexConstants.REGEX;
-import static constant.RegexConstants.REPLACEMENT;
+import static util.RegexConstants.*;
 
 public class FileUtils {
     private static final Logger LOGGER = LogManager.getLogger(FileUtils.class);

@@ -6,8 +6,8 @@ import org.apache.logging.log4j.Logger;
 import java.io.File;
 import java.util.Properties;
 
-import static constant.RegexConstants.EMPTY_STRING;
-import static constant.RegexConstants.PATH_REGEX;
+import static service.PropertiesConstants.EMPTY_STRING;
+import static service.PropertiesConstants.PATH_REGEX;
 import static util.FileUtils.getJsonFiles;
 import static util.FileUtils.getProperties;
 

@@ -1,4 +1,4 @@
-package run;
+package runner;
 
 import entity.Result;
 import entity.ResultWriter;
@@ -11,16 +11,8 @@ import service.FileService;
 
 import java.util.List;
 
-import static constant.PropertiesConstants.FILE_PATH;
-import static constant.PropertiesConstants.FILE_TYPE;
-import static constant.PropertiesConstants.JSON_TYPE;
-import static constant.PropertiesConstants.PROPERTIES_PATH;
-import static constant.PropertiesConstants.RESULT_FILE;
-import static constant.PropertiesConstants.SUFFIX;
-import static constant.PropertiesConstants.XML_TYPE;
-import static util.FileUtils.getListOfFileNames;
-import static util.FileUtils.getNameFromFullPath;
-import static util.FileUtils.getProperties;
+import static service.PropertiesConstants.*;
+import static util.FileUtils.*;
 
 public class Runner {
     private static final Logger LOGGER = LogManager.getLogger(Runner.class);
